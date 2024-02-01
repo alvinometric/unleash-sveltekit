@@ -2,27 +2,21 @@
   import { format, addDays } from 'date-fns';
   import Habit from '$lib/Habit.svelte';
   import { habitStore } from '$lib/stores.js';
+  import AddHabit from '../lib/AddHabit.svelte';
 
   let habits = [];
 
   habitStore.subscribe((allHabits) => {
     habits = allHabits;
-    console.log(habits);
   });
 
-  function getPreviousDates(numDays) {
-    let dates = [];
+  const dates = new Array(5).fill(0).map((_, i) => {
     let today = new Date();
-
-    for (let i = 0; i < numDays; i++) {
-      dates.push(addDays(today, -i));
-    }
-
-    return dates;
-  }
-
-  const dates = getPreviousDates(5);
+    return addDays(today, -i);
+  });
 </script>
+
+<!-- <AddHabit></AddHabit> -->
 
 <table>
   <thead>
