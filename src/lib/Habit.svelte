@@ -1,6 +1,6 @@
 <script>
   import { habitStore } from '$lib/stores.js';
-  import { format, addDays } from 'date-fns';
+  import { format } from 'date-fns';
 
   export let habit;
   export let dates;

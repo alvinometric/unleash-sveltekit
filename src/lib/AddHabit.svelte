@@ -2,16 +2,22 @@
   import { habitStore } from '$lib/stores.js';
 
   function addHabit(e) {
-    let form = e.target;
-    const formData = new FormData(e.target);
+    let numHabits = $habitStore.length;
 
-    habitStore.update((items) => {
-      items.push({ id: items.length + 1, name: formData.get('name'), completedDays: [] });
-      return items;
-    });
+    if (numHabits > 3) {
+      // open dialog
+    } else {
+      let form = e.target;
+      const formData = new FormData(e.target);
 
-    // reset the form
-    form.reset();
+      habitStore.update((items) => {
+        items.push({ id: items.length + 1, name: formData.get('name'), completedDays: [] });
+        return items;
+      });
+
+      // reset the form
+      form.reset();
+    }
   }
 </script>
 
