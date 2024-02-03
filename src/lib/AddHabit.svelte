@@ -1,12 +1,15 @@
 <script>
   import { habitStore } from '$lib/stores.js';
+  import { useFlag } from '@unleash/proxy-client-svelte';
 
+  const maxHabitsIncreased = useFlag('maxHabitsIncreased');
+  let maxHabits = $maxHabitsIncreased ? 6 : 2;
   let habitsFull = false;
 
   function addHabit(e) {
     let numHabits = $habitStore.length;
 
-    if (numHabits === 3) {
+    if (numHabits === maxHabits) {
       habitsFull = true;
       // open dialog
     } else {
