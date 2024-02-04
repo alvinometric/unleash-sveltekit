@@ -1,9 +1,7 @@
 <script>
   import { habitStore } from '$lib/stores.js';
-  import { useFlag } from '@unleash/proxy-client-svelte';
 
-  const maxHabitsIncreased = useFlag('maxHabitsIncreased');
-  let maxHabits = $maxHabitsIncreased ? 6 : 2;
+  export let maxHabits = 3;
   let habitsFull = false;
 
   function addHabit(e) {
