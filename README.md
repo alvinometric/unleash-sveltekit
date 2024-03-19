@@ -1,6 +1,6 @@
 # habits
 
-Bare-bones habits app, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte) and meant to teach how to use Unleash feature flags with Sveltekit.
+Bare-bones habits app, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte) and meant to teach how to [use Unleash feature flags with Sveltekit](https://docs.getunleash.io/feature-flag-tutorials/sveltekit/feature-flags-sveltekit).
 
 ## Developing
 
